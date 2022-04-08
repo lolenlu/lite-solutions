@@ -1641,6 +1641,11 @@
   .w3-container {
     padding: 0.01em 16px
   }
+
+  .w3-container img{
+    border-radius:15%;
+    margin: 5%;
+  }
   
   .w3-panel {
     padding: 0.01em 16px;
@@ -2456,11 +2461,23 @@
       border-top-right-radius: 50% 50%; 
       border-bottom-right-radius: 50% 50%; 
       border-bottom-left-radius: 50% 50%; }
+    
+  .circular-low { 
+        border-top-left-radius: 10% 10%; 
+        border-top-right-radius: 10% 10%; 
+        border-bottom-right-radius: 10% 10%; 
+        border-bottom-left-radius: 10% 10%; }
 
   .container-log{
     text-align: initial;
     display: flex;
     margin-left: 3%;
+    margin-top: 2%;
+  }
+
+  .container-log-simple{
+    text-align: initial;
+    display: flex;
     margin-top: 2%;
   }
 
@@ -2471,6 +2488,7 @@
 
   .container-log-txt{
     margin: 0rem;
+    color: #878787;
   }
 
   .comment-title{
@@ -2490,7 +2508,92 @@
     background-color: #19b5bc00;
     width: 27px;
     height: 23px;
-    padding-top: 2px;
+    padding-top: 3px;
+    padding-left: 7px;
     border: 1px solid;
     margin-left: 1%;
   }
+
+  .container-photos{
+    max-width: 720px;
+  }
+
+  .button-doc{
+    padding: 12px 35px;
+    border-radius: 28px;
+    border: none;
+    background: #19b5bc;
+    color: white;
+    cursor: pointer;
+  }
+
+  .y{
+      color:#ffd289;
+  }
+
+  .container-log-review{
+    padding: 0;
+    margin-left: 1%;
+  }
+
+  .comment-text{
+    font-weight: 500;
+    text-align: initial;
+  }
+
+  .round-button {
+    border: none;
+    cursor:pointer;
+    background: #f7f7f7;
+    display: block;
+    width: 52px;
+    height: 51px;
+    line-height: 39px;
+    border-radius: 50%;
+    color: #878787;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 0 3px grey;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.round-button:hover {
+    border: none;
+    background: #19b5bc;
+    display: block;
+    width: 52px;
+    height: 51px;
+    line-height: 39px;
+    border-radius: 50%;
+    color: #f5f5f5;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 0 3px grey;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+  .review-form{
+    width: 80%;
+    margin-left: 3%;
+  }
+
+  select{
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 100%;
+    padding: 9px 14px;
+    border: 1px #b5b5b5 solid;
+    border-radius: 4px;
+    background-image: linear-gradient(45deg, transparent 50%, #b5b5b5 50%), linear-gradient(135deg, #b5b5b5 50%, transparent 50%), linear-gradient(to right, #ccc0, #ccc0);
+    background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
+    background-size: 5px 5px, 5px 5px, 1px 1.5em;
+    background-repeat: no-repeat;
+  }
+
+  

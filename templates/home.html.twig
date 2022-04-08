@@ -1,11 +1,15 @@
 <html>
-<title>Lite Solutions</title>
+<title> {% block title %} Lite Solutions {% endblock %}</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+{% block stylesheets %}
 <link rel="shortcut icon" href="https://www.litesolutions.es/sites/default/files/media/LS_inicial_color_16x16_transparente.ico" type="image/vnd.microsoft.icon" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="{{asset('css/style.scss')}}">
 <link rel="stylesheet" href="{{asset('icons/style.css')}}">
+{% endblock %}
+
 <body>
 
 
@@ -19,11 +23,68 @@
   <div class="container-log">
     <div class="container-log-img circular-square circular-ok"><i class="icon-et-like"></i></div>
     <strong>Vale la pena</strong>
-    <div class="container-log-img circular-square circular-dollar"><i class="icon-et-like"></i></div>
+    <div class="container-log-img circular-square circular-dollar"><i class="fa fa-eur"></i></div>
     <p class="container-log-txt">Precio aproximado: 8500€</p>
   </div>
   <h2 class="comment-title">Estoy muy orgullosa de mi nuevo abdomen</h2><br>
-  
+  <div class="w3-row container-photos">
+  <div class="w3-quarter w3-container">
+    <img src="{{asset('assets/gallery2.png')}}" />
+  </div>
+  <div class="w3-quarter w3-container">
+    <img src="{{asset('assets/gallery1.png')}}" />
+  </div>
+  <div class="w3-quarter w3-container">
+    <img src="{{asset('assets/gallery2.png')}}" />  
+  </div>
+  <div class="w3-quarter w3-container">
+    <img src="{{asset('assets/gallery1.png')}}" />  
+  </div>
+  <div class="w3-quarter w3-container">
+    <img src="{{asset('assets/gallery2.png')}}" />
+  </div>
+  <div class="w3-quarter w3-container">
+    <img src="{{asset('assets/gallery1.png')}}" />  
+  </div>
+</div><br>
+<h3 class="comment-title">Sobre el doctor</h3><br>  
+ <div class="container-log">
+    <div class="container-log-img"><img class="circular-low" src="{{asset('assets/doctor.png')}}" /></div>
+    <div><strong>Dorsia Clínica Estética</strong><p class="container-log-txt">81 sedes en Madrid, Lleida, Tarragona...</p></div>
+  </div>
+    <button class="button-doc container-log"><strong>Contactar al doctor</strong></button>
+<br>
+<div class="container-log">
+    <strong>Valoracion: </strong>
+    <div class="container-log-review">
+        <div class="reviews">
+            <i class="fa fa-star y"></i>
+            <i class="fa fa-star y"></i>
+            <i class="fa fa-star y"></i>
+            <i class="fa fa-star y"></i>
+            <i class="fa fa-star-o y"></i><!--Empty star-->
+        </div>
+    </div>
+  </div>
+  <br>
+  <p class="comment-title">Es un excelente cirujano que se merece con creces la buena fama que tiene, pero para estas cosas no hay que escatimar! El post operatorio ha sido un poco difícil. Aún no me adapto a caminar sin sentir molestia y opresión, pero supongo que es cuestión de tiempo.</p>
+  <hr>
+  <br>
+  <h3 class="comment-title">Cuéntanos tu experiencia</h2><br>
+  <form class="review-form" id="formComment" name="formComment" action="index.html" method="post">
+    <p class="comment-text">¿Que tratamiento te has realizado?</p>
+    <select id="country" name="country">
+        <option value="au">Australia</option>
+        <option value="ca">Canada</option>
+        <option value="usa">USA</option>
+    </select>
+    <p class="comment-text">¿Recomendarías el tratamiento?</p>
+    <div class="container-log-simple">
+        <div class="container-log-img"><button class="round-button">Sí</button></div>
+        <div class="container-log-img"><button class="round-button">No</button></div>
+    </div>
+  </form> 
+  <br> 
   </div>
 </div>
 
@@ -38,6 +99,9 @@
   </div>
 </div>
 
-
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('js/jquery-3.1.1.min.js') }}"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
+{% endblock %}
 </body>
 </html>
