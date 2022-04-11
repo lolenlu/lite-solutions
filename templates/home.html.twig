@@ -2,17 +2,13 @@
 <title> {% block title %} Lite Solutions {% endblock %}</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 {% block stylesheets %}
 <link rel="shortcut icon" href="https://www.litesolutions.es/sites/default/files/media/LS_inicial_color_16x16_transparente.ico" type="image/vnd.microsoft.icon" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="{{asset('css/style.scss')}}">
 <link rel="stylesheet" href="{{asset('icons/style.css')}}">
 {% endblock %}
-
 <body>
-
-
 <div class="w3-row-padding w3-center w3-margin-top">
 <div class="w3-col m9">
   <div class="w3-card-2 w3-padding-top" style="min-height:460px">
@@ -116,7 +112,6 @@
   </div>
   </div>
 </div>
-
 {% block javascripts %}
     <script type="text/javascript" src="{{ asset('js/jquery3.1.1.min.js') }}"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
