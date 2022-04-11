@@ -30,11 +30,15 @@ Start environment using Docker compose
 
     docker-compose exec php php composer.phar install
 
-3. To access the server go to the url:
+3. Activate backend in root directory:
+
+    node app.js
+
+4. To access the server go to the url:
 
     http://localhost:32777/
     
-If everything is fine you'll see the Symfony welcome page.
+If everything is fine you'll see the INDEX page.
 
 TIP: To execute Symfony Console you can do it with
     docker-compose exec php bin/console `arguments` 

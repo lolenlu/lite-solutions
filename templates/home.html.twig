@@ -17,7 +17,7 @@
 <div class="w3-col m9">
   <div class="w3-card-2 w3-padding-top" style="min-height:460px">
   <div class="container-log">
-    <div class="container-log-img"><img class="circular-square" src="{{asset('assets/avatar4.png')}}" /></div>
+    <div class="container-log-img"><img class="circular-square" src="{{asset('images/avatar4.png')}}" /></div>
     <div><strong>vebris</strong><p class="container-log-txt">Barcelona (Ciudad) - 8 sep 2019</p></div>
   </div>
   <div class="container-log">
@@ -29,27 +29,27 @@
   <h2 class="comment-title">Estoy muy orgullosa de mi nuevo abdomen</h2><br>
   <div class="w3-row container-photos">
   <div class="w3-quarter w3-container">
-    <img src="{{asset('assets/gallery2.png')}}" />
+    <img src="{{asset('images/gallery2.png')}}" />
   </div>
   <div class="w3-quarter w3-container">
-    <img src="{{asset('assets/gallery1.png')}}" />
+    <img src="{{asset('images/gallery1.png')}}" />
   </div>
   <div class="w3-quarter w3-container">
-    <img src="{{asset('assets/gallery2.png')}}" />  
+    <img src="{{asset('images/gallery2.png')}}" />  
   </div>
   <div class="w3-quarter w3-container">
-    <img src="{{asset('assets/gallery1.png')}}" />  
+    <img src="{{asset('images/gallery1.png')}}" />  
   </div>
   <div class="w3-quarter w3-container">
-    <img src="{{asset('assets/gallery2.png')}}" />
+    <img src="{{asset('images/gallery2.png')}}" />
   </div>
   <div class="w3-quarter w3-container">
-    <img src="{{asset('assets/gallery1.png')}}" />  
+    <img src="{{asset('images/gallery1.png')}}" />  
   </div>
 </div><br>
 <h3 class="comment-title">Sobre el doctor</h3><br>  
  <div class="container-log">
-    <div class="container-log-img"><img class="circular-low" src="{{asset('assets/doctor.png')}}" /></div>
+    <div class="container-log-img"><img class="circular-low" src="{{asset('images/doctor.png')}}" /></div>
     <div><strong>Dorsia Clínica Estética</strong><p class="container-log-txt">81 sedes en Madrid, Lleida, Tarragona...</p></div>
   </div>
     <button class="button-doc container-log"><strong>Contactar al doctor</strong></button>
@@ -71,36 +71,55 @@
   <hr>
   <br>
   <h3 class="comment-title">Cuéntanos tu experiencia</h2><br>
-  <form class="review-form" id="formComment" name="formComment" action="index.html" method="post">
+  <form class="review-form" id="formComment" name="formComment" method="POST">
     <p class="comment-text">¿Que tratamiento te has realizado?</p>
-    <select id="country" name="country">
-        <option value="au">Australia</option>
-        <option value="ca">Canada</option>
-        <option value="usa">USA</option>
+    <select id="treatment" name="treatment" required>
+        <option value="" disabled selected>Selecciona el tratamiento</option>
+        <option value="tb">Tratamiento básico</option>
     </select>
     <p class="comment-text">¿Recomendarías el tratamiento?</p>
     <div class="container-log-simple">
-        <div class="container-log-img"><button class="round-button">Sí</button></div>
-        <div class="container-log-img"><button class="round-button">No</button></div>
+        <div class="container-log-img"><button class="round-button" id="yes-form">Sí</button></div>
+        <div class="container-log-img"><button class="round-button" id="no-form">No</button></div>
     </div>
+    <div id="extra-form" class="form-disabled">
+      <p class="comment-text">Título de tu experiencia</p>
+      <input id="title" name="title" placeholder="Título resumen de tu experiencia" class="input-text" value=""/>
+            <div id="the-count" class="count">
+                <i class="fa fa-times-circle r form-disabled" id="icon-fail"></i>
+                <span id="current">0</span>
+                <span id="maximum">/ 90 (min. 20)</span> 
+            </div>
+        <br>
+        <p class="comment-text">Descripción de tu experiencia</p>
+        <textarea id="description" name="description" placeholder="Cuéntanos todos los detalles, porqué decidiste hacerlo, cómo te sientes antes y después del tratamiento, qué consejos darías a los que lo quieren realizar..." class="input-description" value=""></textarea>
+            <div id="the-count2" class="count">
+                <i class="fa fa-times-circle r form-disabled" id="icon-fail2"></i>
+                <span id="current2">0</span>
+                <span id="maximum2">/ 18000 (min. 300)</span> 
+            </div>
+    </div>
+    <br>
+    <button type="submit" class="button-doc container-log"><strong>¡Compartir experiencia!</strong></button>
   </form> 
   <br> 
   </div>
 </div>
 
-<div class="w3-col m3">
-  <div class="w3-card-2 w3-padding-top" style="min-height:460px">
-  <h4>Standard CSS</h4><br>
-  <i class="fa fa-css3 w3-margin-bottom w3-text-theme" style="font-size:120px"></i>
-  <p>Standard CSS only</p>
-  <p>Easy to learn</p>
-  <p>No need for jQuery</p>
-  <p>No JavaScript library</p>
+<div class="w3-col m3 sup-box-comment">
+  <div class="w3-card-2 w3-padding-top box-comments" style="min-height:460px">
+  <div class="container-log-exp">
+    <div class="container-half"><h3 class="comment-title">Más experiencias</h3></div>
+    <div class="container-half"><p class="container-log-txt-right"><a href="#">Ver todas</a></p></div>
+  </div>
+  <div id="data-comments">
+  </div>
   </div>
 </div>
 
 {% block javascripts %}
-    <script type="text/javascript" src="{{ asset('js/jquery-3.1.1.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery3.1.1.min.js') }}"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="{{ asset('js/main.js') }}"></script>
 {% endblock %}
 </body>
